@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李乔惠 - 设计师个人网站</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#8A2BE2',
+secondary: '#FF7F50',
+},
+borderRadius: {
+'none': '0px',
+'sm': '2px',
+DEFAULT: '4px',
+'md': '8px',
+'lg': '12px',
+'xl': '16px',
+'2xl': '20px',
+'3xl': '24px',
+'full': '9999px',
+'button': '4px'
+}
+}
+}
+}
+</script>
+<style>
+body {
+font-family: 'Helvetica Neue', Arial, sans-serif;
+min-height: 1024px;
+background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+.glass-effect {
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.nav-link::after {
+content: '';
+display: block;
+width: 0;
+height: 2px;
+background: currentColor;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.work-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.carousel-item {
+transition: opacity 0.5s ease-in-out;
+}
+.carousel-item.active {
+opacity: 1;
+}
+.carousel-item:not(.active) {
+opacity: 0;
+}
+.social-icon {
+transition: transform 0.3s;
+}
+.social-icon:hover {
+transform: scale(1.2);
+}
+</style>
+</head>
+<body class="text-gray-800">
+<!-- 导航栏 -->
+<nav class="fixed top-0 left-0 right-0 z-50 py-4 px-8 flex justify-between items-center glass-effect">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">李乔惠</a>
+<div class="flex space-x-8">
+<a href="#" class="nav-link text-lg font-medium">首页</a>
+<a href="#works" class="nav-link text-lg font-medium">作品</a>
+<a href="#contact" class="nav-link text-lg font-medium">联系</a>
+</div>
+</nav>
+<!-- Banner轮播区 -->
+<section class="relative h-screen w-full overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center">
+<h1 class="absolute text-4xl font-bold text-white z-10 left-[15%] top-1/2 transform -translate-y-1/2 drop-shadow-lg">欢迎来到我的个人页面</h1>
+<div class="relative w-full h-full">
+<div class="carousel-item active absolute inset-0 w-full h-full">
+<img src="https://ai-public.mastergo.com/ai/img_res/773a591be12a803d0db198752810d34d.jpg"
+alt="设计作品1" class="w-full h-full object-cover object-center">
+</div>
+<div class="carousel-item absolute inset-0 w-full h-full">
+<img src="https://ai-public.mastergo.com/ai/img_res/4ed4396f138b927ebf9637f5d0d1c10e.jpg"
+alt="设计作品2" class="w-full h-full object-cover object-center">
+</div>
+<div class="carousel-item absolute inset-0 w-full h-full">
+<img src="https://ai-public.mastergo.com/ai/img_res/6f5148cf0bd6dec9f18bb1cf8e247c35.jpg"
+alt="设计作品3" class="w-full h-full object-cover object-center">
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-2">
+<button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-index="0"></button>
+<button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-index="1"></button>
+<button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-index="2"></button>
+</div>
+<button class="carousel-prev absolute left-8 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 hover:bg-opacity-50 p-3 rounded-full transition">
+<i class="fas fa-chevron-left text-white" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"></i>
+</button>
+<button class="carousel-next absolute right-8 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 hover:bg-opacity-50 p-3 rounded-full transition">
+<i class="fas fa-chevron-right text-white" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"></i>
+</button>
+</section>
+<!-- 作品展示区 -->
+<section id="works" class="py-20 px-8 max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold text-center mb-12">精选作品</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- 作品1 -->
+<div class="work-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://image-resource.mastergo.com/162808707701421/162808707701433/2c8ebfe621dbeb8b34291fc86de1c4be.jpg"
+alt="新中国成立75周年系列邮票" class="w-full h-full object-cover object-center">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">新中国成立75周年系列邮票</h3>
+<p class="text-gray-600 hidden group-hover:block">为新中国成立75周年纪念而设计的系列邮票，融合传统与现代元素，展现国家发展成就。</p>
+</div>
+</div>
+<!-- 作品2 -->
+<div class="work-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://image-resource.mastergo.com/162808707701421/162808707701433/e6b60d7bc5c8f3c70d3091902abb1cd5.jpg"
+alt="泡泡玛特宣传片" class="w-full h-full object-cover object-center">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">泡泡玛特宣传片</h3>
+<p class="text-gray-600 hidden group-hover:block">为泡泡玛特品牌打造的创意宣传片，通过独特的视觉语言展现品牌魅力。</p>
+</div>
+</div>
+<!-- 作品3 -->
+<div class="work-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://image-resource.mastergo.com/162808707701421/162808707701433/efae4efadd0125844e6f2adb845b712c.jpg"
+alt="原野彩虹，密农优选" class="w-full h-full object-cover object-center">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">原野彩虹，密农优选</h3>
+<p class="text-gray-600 hidden group-hover:block">为密农优选品牌设计的产品包装与视觉形象，展现品牌优质天然的产品理念。</p>
+</div>
+</div>
+<!-- 作品4 -->
+<div class="work-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://image-resource.mastergo.com/162808707701421/162808707701433/9c2c1c70707316a4f2c24a448d2e07dc.png"
+alt="费大厨设计图" class="w-full h-full object-cover object-center">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">费大厨品牌形象设计</h3>
+<p class="text-gray-600 hidden group-hover:block">为费大厨品牌打造的整体品牌形象设计，展现美食文化与现代设计的完美融合。</p>
+</div>
+</div>
+<!-- 作品5 -->
+<div class="work-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://image-resource.mastergo.com/162808707701421/162808707701433/796bdb996b38539dc52c57b567a8fa82.jpg"
+alt="三维仿生" class="w-full h-full object-cover object-center">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">三维仿生</h3>
+<p class="text-gray-600 hidden group-hover:block">运用三维建模技术，探索生物形态与科技美学的完美融合，呈现独特的视觉体验。</p>
+</div>
+</div>
+<!-- 作品6 -->
+<div class="work-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://image-resource.mastergo.com/162808707701421/162808707701433/8686932b952cb86bf73a26cbe5d7b70f.jpg"
+alt="云居寺文创" class="w-full h-full object-cover object-center">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">云居寺文创设计</h3>
+<p class="text-gray-600 hidden group-hover:block">为千年古刹云居寺打造的文创产品设计，融合传统文化与现代设计美学。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 联系方式区 -->
+<section id="contact" class="py-20 px-8 bg-gradient-to-br from-gray-50 to-gray-100">
+<div class="max-w-2xl mx-auto glass-effect rounded-xl p-8 shadow-lg">
+<h2 class="text-3xl font-bold text-center mb-8">联系我</h2>
+<form class="space-y-6">
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">您的邮箱</label>
+<input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="example@email.com">
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">留言内容</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请告诉我您的项目需求..."></textarea>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-button whitespace-nowrap transition duration-300">
+发送消息
+</button>
+</form>
+<div class="mt-8 text-center">
+<p class="text-gray-600">或直接通过邮箱联系我：</p>
+<a href="mailto:liqiaohui@design.com" class="text-primary font-medium hover:underline">liqiaohui@design.com</a>
+</div>
+</div>
+</section>
+<!-- 页脚 -->
+<footer class="py-8 px-8 glass-effect">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-600 mb-4 md:mb-0">© 2023 李乔惠设计工作室. 保留所有权利.</p>
+<div class="flex space-x-6">
+<a href="#" class="social-icon text-gray-600 hover:text-primary">
+<i class="fab fa-weibo" style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;"></i>
+</a>
+<a href="#" class="social-icon text-gray-600 hover:text-primary">
+<i class="fab fa-bilibili" style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;"></i>
+</a>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// 轮播图功能
+const carouselItems = document.querySelectorAll('.carousel-item');
+const dots = document.querySelectorAll('.carousel-dot');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+let currentIndex = 0;
+function showSlide(index) {
+carouselItems.forEach(item => item.classList.remove('active'));
+dots.forEach(dot => dot.classList.remove('bg-white', 'opacity-100'));
+carouselItems[index].classList.add('active');
+dots[index].classList.add('bg-white', 'opacity-100');
+currentIndex = index;
+}
+function nextSlide() {
+let newIndex = (currentIndex + 1) % carouselItems.length;
+showSlide(newIndex);
+}
+function prevSlide() {
+let newIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+showSlide(newIndex);
+}
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => showSlide(index));
+});
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+// 自动轮播
+let interval = setInterval(nextSlide, 5000);
+// 鼠标悬停时暂停轮播
+const carousel = document.querySelector('.relative.w-full.h-full');
+carousel.addEventListener('mouseenter', () => clearInterval(interval));
+carousel.addEventListener('mouseleave', () => interval = setInterval(nextSlide, 5000));
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+// 作品卡片悬停效果
+const workCards = document.querySelectorAll('.work-card');
+workCards.forEach(card => {
+card.addEventListener('mouseenter', function() {
+this.querySelector('p').classList.remove('hidden');
+});
+card.addEventListener('mouseleave', function() {
+this.querySelector('p').classList.add('hidden');
+});
+});
+});
+</script>
+</body>
+</html>
